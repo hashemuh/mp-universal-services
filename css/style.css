@@ -1,0 +1,69 @@
+:root{--char:#23262b;--char2:#2f333a;--red:#c4262e;--copper:#b8693a;--yellow:#f2c515;--bg:#eef0f1;--ink:#1b1d21;--mute:#5b6068;--r:6px}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1c20;--ink:#eceef0;--mute:#a4a9b0}.reviews{background:#23262b}.hours th,.hours td{border-color:#3a3e45}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font:18px/1.6 "Source Sans 3",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+img{max-width:100%;height:auto;display:block}
+h1,h2,.brand,.phone,.tag b{font-family:"Barlow Condensed","Arial Narrow",sans-serif;line-height:1.05;margin:0}
+h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1.2rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;color:#000;padding:8px;z-index:9}
+.sr{position:absolute;left:-999px}
+.wrap{max-width:1040px;margin:0 auto;padding:4.5rem 1.25rem}
+
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:1.5rem;padding:.7rem 1.25rem;background:var(--char);color:#fff}
+.brand{font-size:1.45rem;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:.5rem;margin-right:auto}
+.mark{background:var(--red);padding:.1rem .45rem;border-radius:3px}
+.top nav{display:flex;gap:1.25rem}
+.top nav a{text-decoration:none;opacity:.85}.top nav a:hover{opacity:1;text-decoration:underline}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:var(--r);font-weight:600;text-decoration:none;border:2px solid transparent}
+.btn-call{background:var(--red);color:#fff}.btn-call:hover{background:#a81f26}
+.btn-ghost{border-color:#fff6;color:#fff}.btn-ghost:hover{background:#fff1}
+.btn-ghost-dark{border-color:currentColor}.btn-ghost-dark:hover{background:#fff2}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;background:var(--char);color:#fff;min-height:620px}
+.hero-text{padding:5rem clamp(1.25rem,5vw,4.5rem);align-self:center}
+.hero h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:700;margin:1rem 0 1.2rem}
+.lead{max-width:34rem;color:#d5d8dc}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.status{display:inline-flex;align-items:center;gap:.5rem;margin:0;font-weight:600;color:#d5d8dc}
+.status::before{content:"";width:.7rem;height:.7rem;border-radius:50%;background:#7a8088}
+.status.open::before{background:#3ecf6e}
+.hero-img{margin:0;position:relative;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:1rem;bottom:1rem;background:var(--yellow);color:#111;padding:.5rem .8rem;border-radius:3px;font-size:.9rem;line-height:1.2;box-shadow:0 2px 0 #0003}
+.tag b{display:block;font-size:1.3rem}
+
+.services{margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem}
+.services div{padding:1.1rem 0;border-top:2px solid var(--ink)}
+.services dt{font:700 1.5rem "Barlow Condensed",sans-serif}
+.services dd{margin:.2rem 0 0;color:var(--mute)}
+
+.work{background:var(--char2);color:#fff}
+.work figure{margin:0}.work img{border-radius:var(--r);width:100%}
+.work figcaption{margin-top:.8rem;color:#c5c9ce}
+
+.hours-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.hours{border-collapse:collapse;width:100%}
+.hours th,.hours td{text-align:left;padding:.65rem .2rem;border-bottom:1px solid #cdd1d5;font-weight:400}
+.hours td{text-align:right}
+.hours tr.today th,.hours tr.today td{font-weight:700;color:var(--red)}
+
+.reviews{background:var(--copper);color:#fff}
+.reviews blockquote{margin:0 0 2rem;max-width:44rem}
+.reviews blockquote p{font:600 clamp(1.4rem,3vw,2rem)/1.3 "Barlow Condensed",sans-serif;margin:0 0 1rem}
+.reviews footer{font-size:1rem}
+
+.contact{text-align:center}
+.phone{display:block;font-size:clamp(3rem,10vw,6rem);font-weight:700;color:var(--red);text-decoration:none}
+footer{background:var(--char);color:#c5c9ce;padding:2rem 1.25rem;text-align:center;font-size:.95rem}
+footer p{margin:.2rem 0}
+
+@media (max-width:820px){
+ .top nav{display:none}
+ .hero{grid-template-columns:1fr}.hero-img{height:420px;order:-1}.hero-text{padding:2.5rem 1.25rem 3rem}
+ .services,.hours-wrap{grid-template-columns:1fr}
+ .wrap{padding:3rem 1.25rem}
+}
